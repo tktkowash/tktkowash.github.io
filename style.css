@@ -1,14 +1,17 @@
 .header-banner{
-    position: static;
-    left: 0;
+    position: fixed;
     top: 0;
-    color: #ffffff;
+    left: 0;
     background-color: #000570;
     width: 100%;
     text-align: center;
+}
+
+.header-text{
+    color: #ffffff;
     font-family: 'メイリオ';
-    font-size: 30pt;
-    font: bold;
+    font-size: 20pt;
+    font: bold;    
 }
 
 .footer-banner{
@@ -24,7 +27,7 @@
     position: fixed;
     text-align: center;
     width: 100%;
-    top: 40%;
+    top: 20%;
 }
 
 .gacha-image{
