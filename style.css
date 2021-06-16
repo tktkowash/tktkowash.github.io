@@ -1,0 +1,57 @@
+.header-banner{
+    position: fixed;
+    left: 0;
+    top: 0;
+    font-family: 'メイリオ';
+    font-size: 30pt;
+    color: #ffffff;
+    font: bold;
+    text-align: center;
+    background-color: #000570;
+    width: 100%;
+}
+
+.footer-banner{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #000570;
+    height: 5%;
+    width: 100%;
+}
+
+.gacha-area{
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    top: 40%;
+}
+
+.gacha-button{
+}
+  
+.gacha-display{
+    font-size: 20px;
+    font: bold;
+    text-align: center;    
+}
+
+.box.active{
+      animation: moveTest 4s ease-in-out 0s infinite alternate-reverse none running;
+}
+  
+@keyframes moveTest {
+    0% {
+      background-color: #e74c3c;
+    }
+  
+    50% {
+      transform: scale(2) rotate(10deg) translateX(200px);
+      background: red;
+    }
+  
+    100% {
+      transform: scale(1) rotate(0deg) translateX(0px);
+      background-color: #2ecc71;
+    }
+}
