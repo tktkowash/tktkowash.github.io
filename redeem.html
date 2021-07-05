@@ -11,11 +11,17 @@
 -->
 <script src="main.js"></script>
 </head>
+<script>
+    function postError() {
+        alert("まだ実装中です");
+    }
+</script>
 
 <body>
 <div class="header-text"><p>Redeemページ</p></div>
 
-<form method="POST" action="">
+<!-- <form method="POST" action="postError()""> -->
+<form>
 <div class="table-wrapper">
 <table align="center">
 <tr>
@@ -30,9 +36,11 @@
 </table>
 </div>
 <div class="btn-wrapper">
-    <input type="submit" class="btn" value="Redeem！">
+    <!-- <input type="submit" class="btn" value="Redeem！"> -->
+    <button class="btn" onclick="postError()">Redeem！</button>
 </div>
 </form>
+<div class="eth-area"><a href="index.html">戻る</a></div>
 
 </body>
 </html>

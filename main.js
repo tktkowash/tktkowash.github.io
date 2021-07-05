@@ -44,3 +44,8 @@ function connectWallet() {
         }
     });
 }
+
+function sendTransaction() {
+    // ethereum
+    // .request({ method: 'eth_sendTransaction, params: {}'})
+}
