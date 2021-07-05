@@ -1,19 +1,8 @@
-// var web3 = new Web3(new Web3.providers.WebsocketProvider("http://192.168.10.24:7545"));
-// const web3 = new Web3(new Web3.providers.HttpProvider("http://192.168.10.24:7545"));
-
 window.addEventListener('load', function() {
-    if (typeof web3 !== 'undefined') {
-        web3js = new Web3(web3.currentProvider);
+    if (typeof ethereum !== 'undefined') {
+        // write some code
     } else {
-        alert("Please install MetaMask.");
-    }
-});
-
-web3js.eth.getAccounts.then(function(err, accounts) {
-    myAccount = web3js.eth.accounts[0];
-    console.log("Account info:" + myAccount);
-    if (typeof myAccount === 'undefined') {
-        alert("Please activate MetaMask.")
+        alert('Please install MetaMask.');
     }
 });
 
@@ -34,9 +23,24 @@ function gacha(){
     }
 }
 
-function showETHInfo() {
-
-    var ETHInfo = web3.eth.accounts[0];
-
-    document.getElementById("ETHInfo").textContent = ETHInfo;
+function connectWallet() {
+    ethereum
+    .request({ method: 'eth_requestAccounts' })
+    .then((value1) => {
+        // Connected to Metamask successfully
+        ethereum
+        .request({ method: 'eth_getBalance', params: value1})
+        .then((value2) => {
+            document.getElementById("ethAddress").textContent = "Your Address: " + value1;
+            document.getElementById("ethBalance").textContent = "Your Balance: " + value2;
+        })
+    })
+    .catch((error) => {
+        if (error.code === 4001) {
+        // EIP-1193 userRejectedRequest error
+        console.log('Please connect to MetaMask.');
+        } else {
+        console.error(error);
+        }
+    });
 }

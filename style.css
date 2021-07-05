@@ -16,10 +16,6 @@ td {
     margin: 30px 0px;
 }
 
-.ETH-wrapper {
-    text-align: center;
-}
-
 .btn {
     background: #aaccff;
     color: #000000;
@@ -55,15 +51,18 @@ td {
     height: auto;
 }
   
-.gacha-display {
+.gacha-text {
     font-size: 20px;
     font: bold;
     text-align: center;
 }
 
-.ETH-display {
+.eth-area {
+    text-align: center;
+}
+
+.eth-text {
     font-size: 20px;
     font: bold;
     text-align: center;
-    height: 30px;
 }
