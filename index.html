@@ -5,18 +5,29 @@
 <title>とにかくすごいガチャ</title>
 <meta name="description" content="とにかくすごいガチャが回せるWebサイト">
 <link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/web3/3.0.0-rc.5/web3.min.js"></script>
 <script src="main.js"></script>
 </head>
 
 <body>
 <div class="header-text"><p>とにかくすごいガチャ</p></div>
-
 <div class="gacha-area">
-<img class="gacha-image" id="gacha-imgfile" src="img/img-gacha.png"><br>
-<!--画像取得元：https://pointmall.aeon.co.jp/gacha-->
-<button class="gacha-button" onclick="gacha()">ガチャを回す！</button>
-<div class="gacha-display" id="NFTId"></div>
+    <img class="gacha-image" id="gacha-imgfile" src="img/img-gacha.png"><br>
+    <!--画像取得元：https://pointmall.aeon.co.jp/gacha-->
+    <div class="btn-wrapper">
+        <button class="btn" onclick="gacha()">ガチャを回す！</button>
+    </div>
+    <p class="gacha-display" id="NFTId"> </p>
 </div>
-
+<div class="btn-wrapper">
+    <a href="redeem.html" class="btn">Redeemページ</a>
+</div>
+<div class="ETH-wrapper">
+    <div class="btn-wrapper">
+        <button class="btn" onclick="showETHInfo()">ETH</button>
+    </div>
+    <p class="ETH-display" id="ETHInfo"></p>
+</div>
 </body>
 </html>
