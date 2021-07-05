@@ -10,7 +10,7 @@ window.addEventListener('load', function() {
 });
 
 web3js.eth.getAccounts.then(function(err, accounts) {
-    myAccount = web3.eth.accounts[0];
+    myAccount = web3js.eth.accounts[0];
     console.log("Account info:" + myAccount);
     if (typeof myAccount === 'undefined') {
         alert("Please activate MetaMask.")
