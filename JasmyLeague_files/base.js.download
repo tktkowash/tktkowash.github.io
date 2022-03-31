@@ -1,0 +1,128 @@
+/*要素のフェードイン-----------------------------------------------------*/	
+	$('.effect-fadeup').css('visibility','hidden');
+	$(window).scroll(function(){
+	 var windowHeight = $(window).height(),
+		 topWindow = $(window).scrollTop();
+	 $('.effect-fadeup').each(function(){
+	  var targetPosition = $(this).offset().top;
+	  if(topWindow > targetPosition - windowHeight + 100){
+	   $(this).addClass("fade-up");
+	  }
+	 });
+	});
+
+/*トップボタン-----------------------------------------------------*/
+$(document).ready( function() {
+    var topBtn = $('#page-top');    
+    topBtn.hide();
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            topBtn.fadeIn();
+        } else {
+            topBtn.fadeOut();
+        }
+    });
+    topBtn.click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+
+
+/*固定バナー-----------------------------------------------------*/
+/*
+$(function(){
+      var $body = $('.banner-small');
+      $(window).scroll(function() {
+		var topOffset1 =  $('.about .inner').offset().top;
+        var topOffset2 =  $('.info-lead').offset().top;
+        var thisOffset = $(this).scrollTop();
+		var thisOffset2 =  topOffset2 - $(window).height();
+          if( thisOffset > thisOffset2 || thisOffset < topOffset1) {
+            //$body.fadeOut();
+			$body.addClass("animated-bounce-out");
+          } else {
+            $body.fadeIn();
+			$body.removeClass("animated-bounce-out");
+          }
+	  });
+});
+*/
+
+if ( $('.banner-small').length > 0 ){
+  $(window).scroll(function() {
+    //var topOffset1 =  $('.about .inner').offset().top;
+    var topOffset1 =  $('.js-banner-switch01').offset().top;
+    //var topOffset2 =  $('.info-lead').offset().top;
+    var topOffset2 =  $('.js-banner-switch02').offset().top;
+    var thisOffset = $(this).scrollTop();
+    var thisOffset2 =  topOffset2 - $(window).height();
+    if( thisOffset > thisOffset2 || thisOffset < topOffset1) {
+      //$body.fadeOut();
+      $body.addClass("hidden animated-bounce-out");
+    } else {
+      $body.fadeIn();
+      $body.removeClass("hidden animated-bounce-out");
+    }
+  });var $body = $('.banner-small');
+}
+
+/*スムーススクロール-----------------------------------------------------*/
+	$('a[href^="#"]').click(function(){
+	var speed = 500;
+	var href= $(this).attr("href");
+	var target = $(href == "#" || href == "" ? 'html' : href);
+	var position = target.offset().top;
+	$("html, body").animate({scrollTop:position}, speed, "swing");
+	return false;
+	});
+
+/*sp menu-----------------------------------------------------*/
+    $('.sp-menu').on('click', function() {
+      $('body').append('<div id="modal-overlay"></div>');
+      $('body').append('<div class="sp-close"><span></span></div>');
+      $('#modal-overlay').fadeIn('1500');
+      $('.main-nav ul').fadeIn('1500');
+      $('.sp-close').fadeIn('1500');
+    });
+
+    $(document).on('click', '#modal-overlay', function() {
+      $('#modal-overlay').fadeOut('1500');
+      $('.main-nav ul').fadeOut('1500');
+      $('.sp-close').fadeOut('1500');
+   });
+
+    $(document).on('click', '.sp-close', function() {
+      $('#modal-overlay').fadeOut('1500');
+      $('.main-nav ul').fadeOut('1500');
+      $('.sp-close').fadeOut('1500');
+   });
+
+	var startPos = 0,winScrollTop = 0;
+    $(window).on('scroll',function(){
+        winScrollTop = $(this).scrollTop();
+        if (winScrollTop >= startPos) {
+            if(winScrollTop >= 200){
+                $('.header-menu').addClass('hide');
+            }
+        } else {
+            $('.header-menu').removeClass('hide');
+        }
+        startPos = winScrollTop;
+    });
+
+
+/*faq開閉-----------------------------------------------------*/
+  if($(window).width() <= 768){ 
+  if($('.js-toggle-tit').length){
+    $('.js-toggle-tit').on('click',function(){
+      $(this).toggleClass('open');
+      $(this).next('.js-toggle-content').slideToggle('fast');
+    });
+  }
+  }
+
+
+
